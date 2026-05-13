@@ -1,0 +1,12 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        sortedS1 = sorted(s1)
+
+        for i in range(len(s2)):
+            for j in range(i, len(s2)):
+                sortedTemp = sorted(s2[i:j + 1])
+
+                if sortedTemp == sortedS1:
+                    return True
+
+        return False
